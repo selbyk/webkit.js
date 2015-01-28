@@ -804,6 +804,7 @@ class NinjaWriter:
     """Write build rules to compile all of |sources|."""
 
     extra_defines = []
+    cflags_c = [] # Fixs running./config.sh on Linux.  I hope it doesn't need a real value
     if self.flavor == 'mac':
       cflags = self.xcode_settings.GetCflags(config_name, arch=arch)
       cflags_c = self.xcode_settings.GetCflagsC(config_name)
